@@ -1,10 +1,15 @@
 package com.ragas.java.sample.mail;
 
-import javax.mail.*;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
 import java.util.Date;
 import java.util.Properties;
+
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 /**
  * The following example show you how to send email using Gmail SMTP via TLS
@@ -19,13 +24,13 @@ import java.util.Properties;
  *
  */
 public class GmailSendEmailTLS {
-	private static final String USERNAME = "kodejava";
+	private static final String USERNAME = "chandra.jagarlamudi";
 	private static final String PASSWORD = "********";
 
-	public static void main(String[] args) throws Exception {
+	public static void main(final String[] args) throws Exception {
 		// Email information such as from, to, subject and contents.
-		String mailFrom = "kodejava@gmail.com";
-		String mailTo = "kodejava@gmail.com";
+		String mailFrom = "chandra.jagarlamudi@gmail.com";
+		String mailTo = "chandra.jagarlamudijava@gmail.com";
 		String mailSubject = "TLS - Gmail Send Email Demo";
 		String mailText = "TLS - Gmail Send Email Demo";
 
@@ -33,7 +38,7 @@ public class GmailSendEmailTLS {
 		gmail.sendMail(mailFrom, mailTo, mailSubject, mailText);
 	}
 
-	private void sendMail(String mailFrom, String mailTo, String mailSubject, String mailText) throws Exception {
+	private void sendMail(final String mailFrom, final String mailTo, final String mailSubject, final String mailText) throws Exception {
 
 		Properties config = createConfiguration();
 

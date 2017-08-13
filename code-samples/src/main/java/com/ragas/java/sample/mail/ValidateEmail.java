@@ -13,19 +13,19 @@ import javax.mail.internet.InternetAddress;
  *
  */
 public class ValidateEmail {
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		ValidateEmail demo = new ValidateEmail();
 
-		String email = "kodejava@gmail.com";
+		String email = "chandra.jagarlamudi@gmail.com";
 		boolean isValid = demo.validateEmail(email);
 		demo.printStatus(email, isValid);
 
-		email = "kodejava.gmail";
+		email = "chandra.jagarlamudi.gmail";
 		isValid = demo.validateEmail(email);
 		demo.printStatus(email, isValid);
 	}
 
-	private boolean validateEmail(String email) {
+	private boolean validateEmail(final String email) {
 		boolean isValid = false;
 		try {
 			// Create InternetAddress object and validated the supplied
@@ -39,7 +39,7 @@ public class ValidateEmail {
 		return isValid;
 	}
 
-	private void printStatus(String email, boolean valid) {
+	private void printStatus(final String email, final boolean valid) {
 		System.out.println(email + " is " + (valid ? "a" : "not a") + " valid email address");
 	}
 }

@@ -1,14 +1,19 @@
 package com.ragas.java.sample.mail;
 
+import java.util.Date;
+import java.util.Properties;
+
 import javax.activation.DataHandler;
 import javax.activation.FileDataSource;
-import javax.mail.*;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Multipart;
+import javax.mail.Session;
+import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
-import java.util.Date;
-import java.util.Properties;
 
 /**
  * In this example we create a small program to send email with a file
@@ -22,15 +27,15 @@ import java.util.Properties;
  *
  */
 public class SendEmailWithAttachment {
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		SendEmailWithAttachment demo = new SendEmailWithAttachment();
 		demo.sendEmail();
 	}
 
 	public void sendEmail() {
 		// Defines the E-Mail information.
-		String from = "kodejava@gmail.com";
-		String to = "kodejava@gmail.com";
+		String from = "chandra.jagarlamudi@gmail.com";
+		String to = "chandra.jagarlamudi@gmail.com";
 		String subject = "Important Message";
 		String bodyText = "This is a important message with attachment.";
 
@@ -76,7 +81,7 @@ public class SendEmailWithAttachment {
 
 			// Send the msg. Don't forget to set the username and password
 			// to authenticate to the mail server.
-			Transport.send(msg, "kodejava", "********");
+			Transport.send(msg, "chandra.jagarlamudi", "********");
 		} catch (MessagingException e) {
 			e.printStackTrace();
 		}

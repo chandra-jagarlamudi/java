@@ -1,17 +1,18 @@
 package com.ragas.java.sample.mail;
 
+import java.util.Properties;
+
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import java.util.Properties;
 
 public class SendHTMLEmail {
-	public static void main(String[] args) {
-		String from = "kodejava@gmail.com";
-		String to = "kodejava@gmail.com";
+	public static void main(final String[] args) {
+		String from = "chandra.jagarlamudi@gmail.com";
+		String to = "chandra.jagarlamudi@gmail.com";
 		String subject = "Hello";
 
 		Properties props = new Properties();
@@ -40,7 +41,7 @@ public class SendHTMLEmail {
 			// Send the message to the recipient. You also need to specify the
 			// username
 			// and password to authenticate to the mail server.
-			Transport.send(message, "kodejava", "********");
+			Transport.send(message, "chandra.jagarlamudi", "********");
 		} catch (MessagingException e) {
 			e.printStackTrace();
 		}

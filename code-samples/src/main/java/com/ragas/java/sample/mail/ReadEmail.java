@@ -1,13 +1,19 @@
 package com.ragas.java.sample.mail;
 
-import javax.mail.*;
 import java.util.Properties;
 
+import javax.mail.Authenticator;
+import javax.mail.Folder;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Store;
+
 public class ReadEmail {
-	public static final String USERNAME = "kodejava";
+	public static final String USERNAME = "chandra.jagarlamudi";
 	public static final String PASSWORD = "**********";
 
-	public static void main(String[] args) throws Exception {
+	public static void main(final String[] args) throws Exception {
 		// 1. Setup properties for the mail session.
 		Properties props = new Properties();
 		props.put("mail.pop3.socketFactory.class", "javax.net.ssl.SSLSocketFactory");

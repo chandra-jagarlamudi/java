@@ -1,10 +1,15 @@
 package com.ragas.java.sample.mail;
 
-import javax.mail.*;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
 import java.util.Date;
 import java.util.Properties;
+
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 /**
  * In this example you will use the SSL connection to connect to Gmail SMTP
@@ -16,17 +21,17 @@ import java.util.Properties;
  * to the server using telnet command. The command is telnet smtp.gmail.com 465,
  * and see if there is a reply.
  * 
- * @author cjagarlamudi
+ * @author Chandra Jagarlamudi
  *
  */
 public class GmailSendEmailSSL {
-	private static final String USERNAME = "kodejava";
+	private static final String USERNAME = "chandra.jagarlamudi";
 	private static final String PASSWORD = "********";
 
-	public static void main(String[] args) throws Exception {
+	public static void main(final String[] args) throws Exception {
 		// Email information such as from, to, subject and contents.
-		String mailFrom = "kodejava@gmail.com";
-		String mailTo = "kodejava@gmail.com";
+		String mailFrom = "chandra.jagarlamudi@gmail.com";
+		String mailTo = "chandra.jagarlamudi@gmail.com";
 		String mailSubject = "SSL - Gmail Send Email Demo";
 		String mailText = "SSL - Gmail Send Email Demo";
 
@@ -34,7 +39,7 @@ public class GmailSendEmailSSL {
 		gmail.sendMail(mailFrom, mailTo, mailSubject, mailText);
 	}
 
-	private void sendMail(String mailFrom, String mailTo, String mailSubject, String mailText) throws Exception {
+	private void sendMail(final String mailFrom, final String mailTo, final String mailSubject, final String mailText) throws Exception {
 
 		Properties config = createConfiguration();
 
